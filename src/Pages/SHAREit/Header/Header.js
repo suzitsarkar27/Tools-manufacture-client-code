@@ -1,26 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import auth from "../Firebase/firebase.init";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import RequreAuth from "../RequreAuth/RequreAuth";
 
 const Header = () => {
 
    
-    //     const [user] = useAuthState(auth);
-    //     console.log(user);
-    //     const handelSingOut = () => {
-    //       signOut(auth);
-    //     };
+        const [user] = useAuthState(auth);
+        const handelSingOut = () => {
+          signOut(auth);
+        };
 
-    // const navbar = (
-    //     <>
-    //       <li> <Link to={"/"}>Home</Link> </li>
-    //       <li> <Link to={"/appointment"}>Appointment</Link> </li>
-    //       <li> <Link to={"/reviews"}>Reviews</Link> </li> 
-    //        <li><Link to={"/contact"}>Contact Us</Link> </li>
-    //       <li> <Link to={"/about"}>About</Link> </li>
+    const navbar = (
+        <>
           
-    //       {user ? (  <button onClick={() => handelSingOut()} 
-    //        className="btn btn-secondary text-white"> SingOut </button> ) : (
-    //         <li> <Link to={"/login"}>Login</Link> </li> )}
-    //     </>)
+           <li> <Link to={"/home"}>Home</Link> </li>
+          
+            <li> <Link to={"/dashbord"}>dashbord</Link> </li>
+            <li> <Link to={"/My Odres"}>Blogs</Link> </li>
+           
+            <li> <Link to={"/about"}>About</Link> </li>
+            <li> <Link to={"/blogs"}>Blogs</Link> </li>
+          {user ? (  <button onClick={() => handelSingOut()} 
+           className="btn btn-secondary text-white"> SingOut </button> ) : (
+            <li> <Link to={"/login"}>Login</Link> </li> )}
+        </>)
   return (
     <div className="position: sticky top-0 z-10 ">
       <div className="navbar bg-base-100  ">
@@ -46,13 +52,13 @@ const Header = () => {
               tabindex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              {/* {navbar} */}
+              {navbar}
             </ul>
           </div>
           <a className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal p-0"></ul>
+          <ul className="menu menu-horizontal p-0"> {navbar}</ul>
         </div>
       </div>
     </div>
