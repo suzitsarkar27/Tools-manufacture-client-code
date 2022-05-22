@@ -6,6 +6,8 @@ import Login from './Pages/Home/AllRoutes/Login/Login';
 import SingUp from './Pages/Home/AllRoutes/SingUp/SingUp';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/SHAREit/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
        <Route path='/singup'element={<SingUp></SingUp>}></Route>
      </Routes>
      <Footer></Footer>
+     <ToastContainer />
     </div>
   );
 }

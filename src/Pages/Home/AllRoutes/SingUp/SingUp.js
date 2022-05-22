@@ -65,11 +65,6 @@ const SingUp = () => {
                     className="input input-bordered"
                     required
                   />
-                  <label className="label">
-                    <a href="#" className="label-text-alt link mt-2 link-hover">
-                      Forgot password?
-                    </a>
-                  </label>
                 </div>
                 <div className="form-control mt-6">
                  <input type="submit" value={'Login'}className="btn btn-primary text-white" />
