@@ -7,6 +7,7 @@ import auth from "../../../SHAREit/Firebase/firebase.init";
 const Login = () => {
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
   const { register, handleSubmit } = useForm();
+  
   const onSubmit = (data) => console.log(data);
   return (
         <div class="hero  min-h-screen ">
@@ -43,7 +44,7 @@ const Login = () => {
                   </label>
                 </div>
                 <div class="form-control mt-6">
-                 <input type="submit" class="btn btn-primary text-white " />
+                 <input type="submit" class="btn btn-primary text-white v " value={'Login'} />
                 </div>
                 <p>
                 l have a no account :
