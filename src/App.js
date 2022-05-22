@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div >
+    <div  className="max-w-7xl mx-auto px-12">
      <Header></Header>
      <Routes>
        <Route path='/'element={<Home></Home>}></Route>

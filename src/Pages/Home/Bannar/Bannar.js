@@ -2,7 +2,7 @@ import React from "react";
 
 const Bannar = () => {
   return (
-    <div class="hero min-h-screen bg-base-200">
+    <div class="hero min-h-screen bg-base-200 mb-20">
       <div class="hero-content flex-col lg:flex-row-reverse">
         <img
           src="https://api.lorem.space/image/movie?w=260&h=400"
