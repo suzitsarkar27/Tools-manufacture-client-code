@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Service = ({ servic ,}) => {
-    const {name,image,price,quintity}=servic;
+    const {_id,name,image,price,quintity}=servic;
+    const navigate = useNavigate();
     console.log(servic)
+
+    const navigetToServiceDatalic = (id) => {
+      navigate(`/service/${id}`);
+    };
   return (
     <div class="card  max-w:lg bg-base-100 shadow-xl mt-10">
       <figure>
@@ -12,7 +18,7 @@ const Service = ({ servic ,}) => {
         <h2 class="card-title"> {name} </h2>
         <p>Price:{price}</p>
         <p>Quintity:{quintity}</p>
-        <button class="btn btn-primary text-white">Button</button>
+        <button onClick={()=>navigetToServiceDatalic(_id)} class="btn btn-primary text-white">Button</button>
       </div>
     </div>
   );

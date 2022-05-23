@@ -34,9 +34,9 @@ const Services = () => {
         <div>
            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
            {  
-             services?.map(ser=><Service servic={ser}
+             services?.map(servic=><Service servic={servic}
                     //  refetch={refetch}
-                     key={ser._id}></Service>)
+                     key={servic._id}></Service>)
             }
            </div>
         </div>
