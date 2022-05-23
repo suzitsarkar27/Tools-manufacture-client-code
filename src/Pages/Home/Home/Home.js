@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactsUs from '../AllRoutes/ContactsUs/ContactsUs';
 import Bannar from '../Bannar/Bannar';
-import Rewiew from '../Bannar/Review/Rewiew';
+import Rewiew from '../AllRoutes/Review/Rewiew';
 import Services from '../Services/Services';
 
 const Home = () => {

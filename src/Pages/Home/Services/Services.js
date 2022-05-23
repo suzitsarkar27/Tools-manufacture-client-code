@@ -4,8 +4,7 @@ import Loading from '../../SHAREit/Loading/Loading';
 import Service from '../Service/Service';
 
 const Services = () => {
-    // const [service,setService]=useState([]);
-    // console.log(service)
+    
     const {data:service, isLoading, error,  refetch  } = useQuery('repoData', () =>
     fetch(`data.json`)
     .then(res => res.json()
@@ -15,6 +14,10 @@ const Services = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
+
+
+  if (error) return 'An error has occurred: ' + error.message
+ 
 
     return (
         <div>

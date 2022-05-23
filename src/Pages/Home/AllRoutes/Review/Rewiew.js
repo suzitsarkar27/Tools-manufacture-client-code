@@ -3,7 +3,7 @@ import React from "react";
 const Rewiew = () => {
   return (
     <div className="mt-10">
-        <h2 className="text-center text-2xl text-secondary font-bold">COSTOMAR REWVIES</h2>
+        <h2 className="text-center mt-20 mb-20 text-2xl text-secondary font-bold">COSTOMAR REWVIES</h2>
       <div class="card card-compact w-96 bg-base-100 shadow-xl">
         <figure>
           <img

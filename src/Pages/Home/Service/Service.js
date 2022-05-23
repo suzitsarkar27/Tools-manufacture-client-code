@@ -3,7 +3,7 @@ import React from "react";
 const Service = ({ servic ,refetch}) => {
     const {name,image,price,quintity}=servic;
   return (
-    <div class="card max-w:lg bg-base-100 shadow-xl">
+    <div class="card max-w:lg bg-base-100 shadow-xl mt-10">
       <figure>
       <img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" />
       </figure>

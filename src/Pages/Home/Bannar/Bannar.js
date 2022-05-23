@@ -29,7 +29,7 @@ const Bannar = () => {
       modules={[Autoplay, Pagination, Navigation]}
       className="mySwiper"
     >
-       <div className="w-full">
+       <div className="w-full ">
        <SwiperSlide><img className="w-full h-96"  src="https://i.ibb.co/WyHqCrC/electric-hand-tools-red-wood-sanding-mashine-corded-jigsaw-cordless-drill-small-plunge-router-millin.jpg" alt="" /></SwiperSlide>
       <SwiperSlide><img className="w-full" src="https://i.ibb.co/6H1sWJG/set-different-construction-tools-background-banner-design-set-different-construction-tools-white-bac.jpg" alt="" /></SwiperSlide>
       <SwiperSlide><img className="w-full h-96" src="https://i.ibb.co/dD5jQ2k/construction-carpentry-electric-hand-tools-wooden-background-178769936.jpg" alt="" /></SwiperSlide>
