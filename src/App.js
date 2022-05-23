@@ -2,14 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Pages/SHAREit/Header/Header';
 import { Route, Routes } from 'react-router-dom';
-import Login from './Pages/Home/AllRoutes/Login/Login';
-import SingUp from './Pages/Home/AllRoutes/SingUp/SingUp';
+import Login from './Pages/AllRoutes/Login/Login';
+import SingUp from './Pages/AllRoutes/SingUp/SingUp';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/SHAREit/Footer/Footer';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Abouts from './Pages/Home/AllRoutes/Abouts/Abouts';
-import Blogs from './Pages/Home/AllRoutes/Blogs/Blogs';
+import Abouts from './Pages/AllRoutes/Abouts/Abouts';
+import Blogs from './Pages/AllRoutes/Blogs/Blogs';
 
 function App() {
   return (

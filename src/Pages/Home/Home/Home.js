@@ -1,8 +1,9 @@
 import React from 'react';
-import ContactsUs from '../AllRoutes/ContactsUs/ContactsUs';
+import ContactsUs from '../../AllRoutes/ContactsUs/ContactsUs';
 import Bannar from '../Bannar/Bannar';
-import Rewiew from '../AllRoutes/Review/Rewiew';
+import Rewiew from '../../AllRoutes/Review/Rewiew';
 import Services from '../Services/Services';
+import Container from '../../AllRoutes/Container/Container';
 
 const Home = () => {
     return (
@@ -10,6 +11,7 @@ const Home = () => {
             <Bannar></Bannar>
             <Services></Services>
             <Rewiew></Rewiew>
+            <Container></Container>
             <ContactsUs></ContactsUs>
         </div>
     );

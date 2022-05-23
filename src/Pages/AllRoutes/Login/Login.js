@@ -6,9 +6,9 @@ import {
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import auth from "../../../SHAREit/Firebase/firebase.init";
+import auth from "../../SHAREit/Firebase/firebase.init";
 import { useLocation, useNavigate } from "react-router-dom";
-import Loading from "../../../SHAREit/Loading/Loading";
+import Loading from "../../SHAREit/Loading/Loading";
 import { toast } from "react-toastify";
 
 const Login = () => {

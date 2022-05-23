@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import auth from '../../../SHAREit/Firebase/firebase.init';
-import Loading from '../../../SHAREit/Loading/Loading';
+import auth from '../../SHAREit/Firebase/firebase.init';
+import Loading from '../../SHAREit/Loading/Loading';
 
 const SingUp = () => {
     const emailRef = useRef("");
