@@ -1,0 +1,102 @@
+[
+  {
+    "id":1,
+    "name": "Practical MongoDB",
+    "supplyName":"Pogramming Book",
+    "discription": "Architecting, Developing, and Administering MongoDB",
+    "price": "$41.57",
+    "quintity": "5",
+    "solid":"yes",
+    "image": "https://itbook.store/img/books/9781484206485.png"
+  },
+  {
+    "id":1,
+    "name": "The Definitive Guide to MongoDB, 3rd Edition",
+    "supplyName":"Pogramming Book",
+    "discription": "A complete guide to dealing with Big Data using MongoDB",
+    "price": "$49.99",
+    "quintity": "7",
+    "solid":"yes",
+    "image": "https://itbook.store/img/books/9781484211830.png"
+  },
+  {
+    "id":1,
+    "name": "MongoDB Performance Tuning",
+    "supplyName":"Pogramming Book",
+    "discription": "Optimizing MongoDB Databases and their Applications",
+    "price": "$37.24",
+    "solid":"no",
+    "quintity": "9",
+    "image": "https://itbook.store/img/books/9781484268780.png"
+  },
+  {
+    "id":1,
+    "name": "MongoDB in Action, 2nd Edition",
+    "supplyName":"Pogramming Book",
+    "discription": "Practical Guide to MongoDB: Architecting, Developing, and Administering MongoDB begins with a short introduction to the",
+    "price": "$19.99",
+    "solid":"no",
+    "quintity": "11",
+    "image": "https://itbook.store/img/books/9781617291609.png"
+  },
+  {
+    "id":1,
+    "name": "Pentaho Analytics for MongoDB",
+    "supplyName":"Pogramming Book",
+    "discription": "Combine Pentaho Analytics and MongoDB to create powerful analysis and reporting solutions",
+    "price": "$16.99",
+    "solid":"yes",
+    "quintity": "8",
+    "image": "https://itbook.store/img/books/9781782168355.png"
+  },
+  {
+    "id":1,
+    "name": "Pentaho Analytics for MongoDB Cookbook",
+    "supplyName":"Pogramming Book",
+    "discription": "Over 50 recipes to learn how to use Pentaho Analytics and MongoDB ",
+    "price": "$35.99",
+    "solid":"no",
+    "quintity": "4",
+    "image": "https://itbook.store/img/books/9781783553273.png"
+  },
+  {
+    "id":1,
+    "name": "Web Development with MongoDB and NodeJS, 2nd Edition",
+    "supplyName":"Pogramming Book",
+    "discription": "Build an interactive and full-featured web application",
+    "price": "$38.01",
+    "solid":"yes",
+    "quintity": "10",
+    "image": "https://itbook.store/img/books/9781785287527.png"
+  },
+  {
+    "id":1,
+    "name": "MongoDB Cookbook, 2nd Edition",
+    "supplyName":"Pogramming Book",
+    "discription": "Harness the latest features of MongoDB 3 with this collection of 80 recipes ",
+    "price": "$44.99",
+    "solid":"no",
+    "quintity": "4",
+    "image": "https://itbook.store/img/books/9781785289989.png"
+  },
+  {
+    "_id":1,
+    "name": "The Little MongoDB Book",
+    "supplyName":"Pogramming Book",
+    "discription": "Karl Seguin is a developer with experience across various fields and technologies. He's an expert .NET and Ruby developer.",
+    "price": "$0.10",
+    "solid":"yes",
+    "quintity": "5",
+    "image": "https://itbook.store/img/books/1001592208320.png"
+  },
+  {
+    "_id":1,
+    "name": "Learning MongoDB",
+    "supplyName":"Pogramming Book",
+    "discription": " It is an unofficial and free MongoDB ebook created for educational purposes. All the content is extracted from Stack Overflow ",
+    "price": "$12.00",
+    "solid":"no",
+    "quintity": "7",
+    "image": "https://itbook.store/img/books/1001629462276.png"
+  }
+]

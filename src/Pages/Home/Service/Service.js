@@ -1,7 +1,6 @@
 import React from "react";
 
-const Service = ({ servic }) => {
-    console.log(servic)
+const Service = ({ servic ,refetch}) => {
     const {name,image,price,quintity}=servic;
   return (
     <div class="card max-w:lg bg-base-100 shadow-xl">
