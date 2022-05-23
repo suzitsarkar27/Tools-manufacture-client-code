@@ -13,11 +13,11 @@ const SingUp = () => {
 
     const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-    const [signInWithGoogle] = useSignInWithGoogle(auth);
+    const [signInWithGoogle,guser, gloading,gerror] = useSignInWithGoogle(auth);
 
     let errorElement;
      
-    if (user) {
+    if (user || guser) {
         navigate("/home");
       }
 
@@ -26,11 +26,11 @@ const SingUp = () => {
         console.log("user", user);
       }
 
-      if(loading){
+      if(loading ||gloading){
           return <Loading></Loading>
       }
 
-      if (error) {
+      if (error|| gerror) {
         errorElement = <p>Error:{error?.message}</p>;
       }
     

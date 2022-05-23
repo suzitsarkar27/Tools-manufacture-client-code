@@ -5,27 +5,38 @@ import Service from '../Service/Service';
 
 const Services = () => {
     
-    const {data:service, isLoading, error,  refetch  } = useQuery('repoData', () =>
-    fetch(`data.json`)
-    .then(res => res.json()
-    )
-  )
+    const [service,setService]=useState([]);
+    const services=service.slice(3,9);
 
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
+  useEffect(()=>{
+      fetch(`http://localhost:5000/data`)
+      .then(res=>res.json())
+      .then(data=>setService(data))
+  },[])
+    
+//     const {data:service, isLoading, error,  refetch  } = useQuery('repoData', () =>
+//     fetch(`http://localhost:5000/data`)
+//     .then(res => res.json()
+//     )
+//   )
+  
 
 
-  if (error) return 'An error has occurred: ' + error.message
+//   if (isLoading) {
+//     return <Loading></Loading>;
+//   }
+
+
+//   if (error) return 'An error has occurred: ' + error.message
  
 
     return (
         <div>
            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5'>
-           {
-                service?.map(ser=><Service servic={ser}
-                     refetch={refetch}
-                     key={ser.id}></Service>)
+           {  
+             services?.map(ser=><Service servic={ser}
+                    //  refetch={refetch}
+                     key={ser._id}></Service>)
             }
            </div>
         </div>

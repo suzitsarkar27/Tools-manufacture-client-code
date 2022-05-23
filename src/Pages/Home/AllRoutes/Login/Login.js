@@ -31,15 +31,22 @@ const Login = () => {
     navigate((from, { replace: true }));
   }
 
-  if (error) {
+  if (error ||gerror) {
     errorElement = <p>Error:{error?.message}</p>;
   }
 
   if (error) {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
+  if(guser){
+    navigate('/home')
+  }
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit =async (data) =>{
+   await signInWithEmailAndPassword(data)
+    console.log(data)
+    navigate('/home')
+  } ;
 
   const resetPassword = async (e) => {
     const email = e.target.email.value;
@@ -88,6 +95,7 @@ const Login = () => {
                     onClick={resetPassword} > Reset Password </button>
                 </p>
               </label>
+              {errorElement}
             </div>
             <div class="form-control mt-6">
               <input

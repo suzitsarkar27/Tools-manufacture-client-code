@@ -17,12 +17,13 @@ const Header = () => {
         <>
           
             <li> <Link to={"/home"}>Home</Link> </li>
-            <li> <Link to={"/dashbord"}>dashbord</Link> </li>
-            <li> <Link to={"/My Odres"}>Blogs</Link> </li>
+            <li> <Link to={"/parches"}>Parches</Link> </li>
+            <li> <Link to={"/dashbord"}>Dashbord</Link> </li>
+            <li> <Link to={"/My Odres"}>My Oders</Link> </li>
             <li> <Link to={"/about"}>About</Link> </li>
             <li> <Link to={"/blogs"}>Blogs</Link> </li>
           {user ? (  <button onClick={() => handelSingOut()} 
-           className="btn btn-secondary text-white"> SingOut </button> ) : (
+           className="btn btn-secondary text-white ml-3"> SingOut </button> ) : (
             <li> <Link to={"/login"}>Login</Link> </li> )}
         </>)
   return (
