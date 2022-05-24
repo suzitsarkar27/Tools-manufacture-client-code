@@ -2,24 +2,23 @@ import React from "react";
 
 const DashBord = () => {
   return (
-    <div>
-      <h2>Thsi is dashbord componont</h2>
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row">
-          <img
-            src="https://api.lorem.space/image/movie?w=260&h=400"
-            class="max-w-sm rounded-lg shadow-2xl"
-          />
-          <div>
-            <h1 class="text-5xl font-bold">Box Office News!</h1>
-            <p class="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button class="btn btn-primary">Get Started</button>
-          </div>
-        </div>
+    <div class="drawer drawer-mobile bg-accent">
+      <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col items-center justify-center">
+        {/* <!-- Page content here --> */}
+      
+      </div>
+      <div class="drawer-side">
+        <label for="my-drawer-2" class="drawer-overlay"></label>
+        <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+          {/* <!-- Sidebar content here --> */}
+          <li>
+            <a>Sidebar Item 1</a>
+          </li>
+          <li>
+            <a>Sidebar Item 2</a>
+          </li>
+        </ul>
       </div>
     </div>
   );
