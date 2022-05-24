@@ -2,7 +2,7 @@ import React from "react";
 
 const Abouts = () => {
   return (
-    <div class="hero min-h-screen bg-base-200 rounded">
+    <div class="hero min-h-screen rounded bg-base-100 lg:shadow-2xl p-5">
       <div class="hero-content flex-col lg:flex-row">
         <img
           src="https://i.ibb.co/sVg654y/suzit.jpg?w=260&h=400"
@@ -10,10 +10,10 @@ const Abouts = () => {
         />
         <div>
 
-        <div className="p-5 mt-20">
-        <h2 className="text-center mb-10 text-secondary font-bold text-2xl">About Myself</h2>
+        <div className="mt-20">
+        <h2 className="text-center mb-10 text-secondary  font-bold text-2xl">About Myself</h2>
           <h2 className="mb-5">Degine & Developer By : Suzit Sarkar </h2>
-          <p className="leading-loose  ">
+          <p className="leading-loose py-6 ">
             I was born in Hajigang district, Madhab Upazila. I have two sisters
             and my parents. I have completed Hse in 2021. Now I am studying in
             Uttara university at B.Sc. in computer science engineering. I’ve

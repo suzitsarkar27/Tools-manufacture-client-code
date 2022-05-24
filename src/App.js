@@ -10,7 +10,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Abouts from './Pages/AllRoutes/Abouts/Abouts';
 import Blogs from './Pages/AllRoutes/Blogs/Blogs';
-import Odres from './Pages/AllRoutes/Odres/Odres';
 import Parches from './Pages/AllRoutes/Parches/Parches';
 import DashBord from './Pages/AllRoutes/DashBord/DashBord';
 import MyOders from './Pages/AllRoutes/MyOders/MyOders';
@@ -24,13 +23,12 @@ function App() {
      <Routes>
        <Route path='/'element={<Home></Home>}></Route>
        <Route path='/home'element={<Home></Home>}></Route>
-       <Route path='/service/:Id'element={<Odres></Odres>}></Route>
-       <Route path='/parches'element={
+       <Route path='/service/:Id'element={
 
-              <RequreAuth>
-                  <Parches></Parches>
-              </RequreAuth>}></Route>
-
+            <RequreAuth>
+              <Parches></Parches>
+            </RequreAuth>}></Route>
+            
        <Route path='/dashbord'element={
               <RequreAuth>
                 <DashBord></DashBord>
@@ -41,7 +39,7 @@ function App() {
                   <MyOders></MyOders>
               </RequreAuth>
       }></Route>
-      
+
        <Route path='/about'element={<Abouts></Abouts>}></Route>
        <Route path='/blogs'element={<Blogs></Blogs>}></Route>
        <Route path='/login'element={<Login></Login>}></Route>

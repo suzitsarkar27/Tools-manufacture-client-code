@@ -17,7 +17,6 @@ const Header = () => {
         <>
           
             <li> <Link to={"/home"}>Home</Link> </li>
-            <li> <Link to={"/parches"}>Parches</Link> </li>
             <li> <Link to={"/dashbord"}>Dashbord</Link> </li>
             <li> <Link to={"/My Odres"}>My Oders</Link> </li>
             <li> <Link to={"/about"}>About</Link> </li>
