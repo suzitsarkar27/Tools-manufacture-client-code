@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 const Service = ({ servic ,}) => {
     const {_id,name,image,price,quintity}=servic;
     const navigate = useNavigate();
-    console.log(servic)
 
     const navigetToServiceDatalic = (id) => {
       navigate(`/service/${id}`);

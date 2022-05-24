@@ -2,14 +2,26 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import UseUpData from "../../SHAREit/CoustomHoosk/UseUpData";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from "../../SHAREit/Firebase/firebase.init";
 
 const Parches = () => {
   const { Id } = useParams({});
   const [service, setService] = UseUpData(Id);
+  const [user, loading, error] = useAuthState(auth);
 
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
-
+  const handleSubmit=(event)=>{
+    event.preventDefault();
+    const order={
+        email:user.email,
+        userName:user.displayName,
+        phone:event.target.phone.value,
+        address:event.target.address.value,
+        quantity:event.target.quintity.value,
+    }
+   console.log(order)
+   
+  }
   return (
     <div>
       <h2 className="text-2xl text-secondary">Product Code : {Id}</h2>
@@ -19,47 +31,50 @@ const Parches = () => {
           <img src={service.image} class="max-w-sm mr-10 rounded-lg shadow-2xl" />
           
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
-              <form onSubmit={handleSubmit(onSubmit)} class="card-body ">
+              <form onSubmit={handleSubmit} class="card-body ">
                 <p>Discription :{service.discription}</p>
                 <div class="form-control">
                   <input
-                    {...register("name")}
-                    name="email"
+                   type='text'
+                    name='name'
+                    value={user.displayName}
                     class="input input-bordered"
                     required
                   />
                 </div>
                 <div class="form-control">
                   <input
-                    {...register("email")}
-                    placeholder="email"
-                    name="email"
-                    class="input input-bordered"
-                    required
+                  type='email'
+                  name="email"
+                  value={user.email}
+                  class="input input-bordered"
+                  required
                   />
                 </div>
 
                 <div class="form-control">
                   <input
-                    {...register("address")}
-                    placeholder="Type Your Adress"
+                  type='text'
+                    name='address'
+                    placeholder="Type Your Address"
                     class="input input-bordered"
                     required
                   />
                 </div>
                 <div class="form-control">
-                  <input
-                    {...register("number")}
+                  <input type="number"
+                    name="phone"
                     placeholder="Type Your Phone Number"
                     class="input input-bordered"
                     required
                   />
                 </div>
-                <p>Available Quantity:</p>
+                <p>Available Quantity:{service.quintity}</p>
 
                 <div class="form-control">
                   <input
-                    {...register("number")}
+                  type='number'
+                    name="quintity"
                     placeholder="minimum Oder 3/pic"
                     class="input input-bordered"
                     required
