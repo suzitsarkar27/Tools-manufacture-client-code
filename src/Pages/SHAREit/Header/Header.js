@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import auth from "../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
@@ -7,6 +7,8 @@ import RequreAuth from "../RequreAuth/RequreAuth";
 
 const Header = () => {
   const [user] = useAuthState(auth);
+
+  const {pathname}=useLocation();
   const handelSingOut = () => {
     signOut(auth);
   };
@@ -77,10 +79,8 @@ const Header = () => {
               {navbar}
             </ul>
           </div>
-          {/* <label for="my-drawer-2" class="btn btn-square btn-ghost lg:hidden">
-            Open drawer
-          </label> */}
-          <label for="my-drawer-2" class="btn btn-square btn-ghost lg:hidden">
+
+        { pathname.includes('dashbord')&&( <label for="my-drawer-2" class="btn btn-square btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -95,8 +95,9 @@ const Header = () => {
                 d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
               ></path>
             </svg>
-          </label>
-          <a className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
+          </label>)}
+          <img className=" h-16" src="https://i.ibb.co/1rdQqzQ/387-3870161-power-tool-pro-logo-hd-png-download-removebg-preview-removebg-preview-1.png" alt="" /> 
+
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0"> {navbar}</ul>

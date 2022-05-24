@@ -14,6 +14,8 @@ import Parches from './Pages/AllRoutes/Parches/Parches';
 import DashBord from './Pages/AllRoutes/DashBord/DashBord';
 import MyOders from './Pages/AllRoutes/MyOders/MyOders';
 import RequreAuth from './Pages/SHAREit/RequreAuth/RequreAuth';
+import MyOrders from './Pages/AllRoutes/DashBord/MyOrders';
+import MyProfile from './Pages/AllRoutes/DashBord/MyProfile';
 
 
 function App() {
@@ -32,7 +34,10 @@ function App() {
        <Route path='/dashbord'element={
               <RequreAuth>
                 <DashBord></DashBord>
-              </RequreAuth>}></Route>
+              </RequreAuth>}>
+                <Route index element={<MyOrders></MyOrders>}></Route>
+                <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+              </Route>
 
        <Route path='/myoders'element={
               <RequreAuth>
