@@ -13,22 +13,20 @@ const MyOrders = () => {
       <h2 className="text-2xl mb-2 text-primary font-bold">Your Oders</h2>
 
       <div>
-        <table className="w-full ">
+        <table className="w-full text-center">
         <thead className="bg-gray-100 border-b-2  border-gray-200 ">
-                <tr>
-                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                <tr className="">
+                  <th className="p-3 text-sm font-semibold tracking-wide ">
                     #
                   </th>
-                  {/* <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                    First Name
-                  </th> */}
-                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                
+                  <th className="p-3 text-sm font-semibold tracking-wide ">
                   Imgare
                   </th>
-                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  <th className="pl-14 ml-3 text-sm font-semibold tracking-wide ">
                     Address
                   </th>
-                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  <th className="p-3 text-sm font-semibold tracking-wide">
                     Quantity
                   </th>
                   <th className="p-3 text-sm font-semibold tracking-wide text-left">
@@ -37,7 +35,7 @@ const MyOrders = () => {
                   <th className="p-3 text-sm font-semibold tracking-wide text-left">
                     Price
                   </th>
-                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  <th className="pl-10 text-sm font-semibold tracking-wide text-left">
                     Cancele
                   </th>
                 </tr>
@@ -47,15 +45,15 @@ const MyOrders = () => {
          <>
           <table className="w-full  ">
              
-              <tbody>
-                <tr>
-                  <td className="p-3 text-s">1</td>
-                  <td className="p-3 text-sm"><span><img className="h-20 w-20" src={oder.service.image} alt="" /></span></td>
-                  <td className="p-3 text-sm"><span>{oder.address}</span></td>
-                  <td className="p-3 text-sm"><span>{oder.oderQuantity}</span></td>
-                  <td className="p-3 text-sm"><span>{oder.oderQuantity}</span></td>
-                  <td className="p-3 text-sm"><span>{oder.service.price}</span></td>
-                  <td className="p-3 text-sm"><span><button className="btn bg-red-700 ">Cancel</button></span></td>
+              <tbody >
+                <tr className="border text-center border-r-4">
+                  <td className="p-3 text-sm border-r-1">1</td>
+                  <td className="p-3 text-sm border-r-1"><span><img className="h-20 w-20" src={oder.service.image} alt="" /></span></td>
+                  <td className="p-3 text-sm border-r-1"><span>{oder.address}</span></td>
+                  <td className="p-3 text-sm border-r-1"><span>{oder.oderQuantity}</span></td>
+                  <td className="pl-10 text-sm border-r-1"><span>{oder.oderQuantity}</span></td>
+                  <td className="p-3 text-sm border-r-1"><span>{oder.service.price}</span></td>
+                  <td className="pl-3 text-sm border-r-1"><span><button className="btn bg-red-700 ">Cancel</button></span></td>
                 </tr>
                
               </tbody>
