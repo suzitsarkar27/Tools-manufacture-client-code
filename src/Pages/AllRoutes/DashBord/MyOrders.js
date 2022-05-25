@@ -19,36 +19,43 @@ const MyOrders = () => {
                   <th className="p-3 text-sm font-semibold tracking-wide text-left">
                     #
                   </th>
-                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  {/* <th className="p-3 text-sm font-semibold tracking-wide text-left">
                     First Name
+                  </th> */}
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  Imgare
                   </th>
                   <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                    Last Name
+                    Address
                   </th>
                   <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                    Username
+                    Quantity
                   </th>
                   <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                    Last Name
+                    Pace
                   </th>
                   <th className="p-3 text-sm font-semibold tracking-wide text-left">
-                    Username
+                    Price
+                  </th>
+                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                    Cancele
                   </th>
                 </tr>
               </thead>
         </table>
         {order.map((oder) => (
          <>
-          <table className="w-full ml-5 ">
+          <table className="w-full  ">
              
               <tbody>
                 <tr>
                   <td className="p-3 text-s">1</td>
-                  <td className="p-3 text-sm">Mark</td>
-                  <td className="p-3 text-sm">Otto</td>
-                  <td className="p-3 text-sm">@mdo</td>
-                  <td className="p-3 text-sm">@mdo</td>
-                  <td className="p-3 text-sm">@mdo</td>
+                  <td className="p-3 text-sm"><span><img className="h-20 w-20" src={oder.service.image} alt="" /></span></td>
+                  <td className="p-3 text-sm"><span>{oder.address}</span></td>
+                  <td className="p-3 text-sm"><span>{oder.oderQuantity}</span></td>
+                  <td className="p-3 text-sm"><span>{oder.oderQuantity}</span></td>
+                  <td className="p-3 text-sm"><span>{oder.service.price}</span></td>
+                  <td className="p-3 text-sm"><span><button className="btn bg-red-700 ">Cancel</button></span></td>
                 </tr>
                
               </tbody>

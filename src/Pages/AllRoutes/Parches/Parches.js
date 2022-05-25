@@ -10,7 +10,9 @@ const Parches = () => {
   const { Id } = useParams({});
   const [service, setService] = UseUpData(Id);
   const [user, loading, error] = useAuthState(auth);
+  const { quintity ,minimun} = service;
 
+ 
   const handleSubmit=(event)=>{
     event.preventDefault();
     const order={
@@ -18,10 +20,9 @@ const Parches = () => {
         userName:user.displayName,
         phone:event.target.phone.value,
         address:event.target.address.value,
-        quantity:event.target.quintity.value,
+        oderQuantity:event.target.minimumquintity.value,
         service
     }
-   console.log(order)
    
    const proceed = toast("Your Data Is Post SuccessFull");
      if(proceed){
@@ -42,17 +43,34 @@ const Parches = () => {
    })
      }
   }
+
+  if(quintity> service.quintity){
+    toast(`Plasse Order more than${service.quintity}`);
+  }
+
+  if(quintity<service.quintity){
+    toast(`Plasse Order more than${service.minimun}`);
+  }
   return (
     <div>
       <h2 className="text-2xl text-secondary">Product Code : {Id}</h2>
 
       <div class="hero min-h-screen rounded bg-base-100 lg:shadow-2xl p-5">
         <div class="hero-content flex-col lg:flex-row">
-          <img src={service.image} class="max-w-sm mr-10 rounded-lg shadow-2xl" />
-          
+         
+         <img src={service.image} class="max-w-sm mr-10 rounded-lg shadow-2xl" />
+         <div className="pr-5">
+           <p><span className="font-bold">Name</span>:{service.name}</p>
+          <p className="font-bold">Price:{service.price}</p>
+          <p ><span className="font-bold">Discription</span> :{service.discription}</p>
+         </div>
+                
             <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
               <form onSubmit={handleSubmit} class="card-body ">
-                <p>Discription :{service.discription}</p>
+                {/* <p>Discription :{service.discription}</p> */}
+                
+                <p className="font-bold">Minimum Order Quantity:{service.minimun}</p>
+                <p className="font-bold">Available Quantity:{service.quintity}</p>
                 <div class="form-control">
                   <input
                    type='text'
@@ -74,7 +92,7 @@ const Parches = () => {
 
                 <div class="form-control">
                   <input
-                  type='text'
+                    type='text'
                     name='address'
                     placeholder="Type Your Address"
                     class="input input-bordered"
@@ -89,16 +107,18 @@ const Parches = () => {
                     required
                   />
                 </div>
-                <p>Available Quantity:{service.quintity}</p>
+                <p> Quantity:</p>
 
                 <div class="form-control">
                   <input
                   type='number'
-                    name="quintity"
+                    name="minimumquintity"
+                    // value={service.minimun}
                     placeholder="minimum Oder 3/pic"
                     class="input input-bordered"
                     required
                   />
+                 
                 </div>
                 <div class="form-control mt-6">
                   <input

@@ -6,7 +6,7 @@ import Service from '../Service/Service';
 const Services = () => {
     
     const [service,setService]=useState([]);
-    const services=service.slice(3,9);
+    const services=service.slice(0,6);
 
   useEffect(()=>{
       fetch(`http://localhost:5000/data`)
