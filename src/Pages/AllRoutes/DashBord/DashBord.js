@@ -3,20 +3,19 @@ import { Link, Outlet } from "react-router-dom";
 
 const DashBord = () => {
   return (
-    <div class="drawer drawer-mobile bg-accent">
+    <div class="drawer drawer-mobile bg-base-100 shadow-xl mt-5 ">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col items-center justify-center">
+      <div class="drawer-content flex flex-col ">
         {/* <!-- Page content here --> */}
-        <h2 className="text-2xl text-secondary font-bold">Dashbord Componont</h2>
         <Outlet></Outlet>
       </div>
-      <div class="drawer-side">
+      <div class="drawer-side bg-accent sticky top-0 z-0 ">
         <label for="my-drawer-2" class="drawer-overlay"></label>
-        <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+        <ul class=" menu p-4 overflow-y-auto  w-80 text-black font-bold">
           {/* <!-- Sidebar content here --> */}
-
-          <li className="mb-3">  <Link to={'/dashbord'}>My Oders</Link> </li> 
+          <li>  <Link to={'/dashbord'}>My Oders</Link> </li> 
           <li> <Link to={'/dashbord/profile'}>My Profile</Link></li>
+          <li> <Link to={'/dashbord/review'}>My Review</Link></li>
 
         </ul>
       </div>

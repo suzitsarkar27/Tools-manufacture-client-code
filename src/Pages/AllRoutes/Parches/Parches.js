@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import UseUpData from "../../SHAREit/CoustomHoosk/UseUpData";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from "../../SHAREit/Firebase/firebase.init";
+import { toast } from "react-toastify";
 
 const Parches = () => {
   const { Id } = useParams({});
@@ -18,9 +19,28 @@ const Parches = () => {
         phone:event.target.phone.value,
         address:event.target.address.value,
         quantity:event.target.quintity.value,
+        service
     }
    console.log(order)
    
+   const proceed = toast("Your Data Is Post SuccessFull");
+     if(proceed){
+        
+   fetch("http://localhost:5000/order", {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(order),
+  })
+   .then(res=>res.json())
+   .then(data=>{
+     console.log(data)
+     if(data.insertedId){
+     <toast></toast>
+     }
+   })
+     }
   }
   return (
     <div>

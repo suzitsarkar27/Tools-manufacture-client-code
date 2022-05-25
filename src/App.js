@@ -16,7 +16,8 @@ import MyOders from './Pages/AllRoutes/MyOders/MyOders';
 import RequreAuth from './Pages/SHAREit/RequreAuth/RequreAuth';
 import MyOrders from './Pages/AllRoutes/DashBord/MyOrders';
 import MyProfile from './Pages/AllRoutes/DashBord/MyProfile';
-
+import MyReview from './Pages/AllRoutes/My Review/MyReview';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               </RequreAuth>}>
                 <Route index element={<MyOrders></MyOrders>}></Route>
                 <Route path='profile' element={<MyProfile></MyProfile>}></Route>
+                <Route path='review' element={<MyReview></MyReview>}></Route>
               </Route>
 
        <Route path='/myoders'element={
