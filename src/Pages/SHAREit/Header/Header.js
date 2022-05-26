@@ -32,7 +32,6 @@ const Header = () => {
         <Link to={"/about"}>About</Link>{" "}
       </li>
       <li>
-        {" "}
         <Link to={"/blogs"}>Blogs</Link>{" "}
       </li>
       {user ? (
