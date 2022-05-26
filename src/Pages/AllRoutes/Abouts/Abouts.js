@@ -2,11 +2,11 @@ import React from "react";
 
 const Abouts = () => {
   return (
-    <div class="hero min-h-screen rounded bg-base-100 lg:shadow-2xl p-5">
-      <div class="hero-content flex-col lg:flex-row">
+    <div className="hero min-h-screen rounded bg-base-100 lg:shadow-2xl p-5">
+      <div className="hero-content flex-col lg:flex-row">
         <img
           src="https://i.ibb.co/sVg654y/suzit.jpg?w=260&h=400"
-          class="max-w-sm rounded-lg shadow-2xl"
+          className="max-w-sm rounded-lg shadow-2xl"
         />
         <div>
 

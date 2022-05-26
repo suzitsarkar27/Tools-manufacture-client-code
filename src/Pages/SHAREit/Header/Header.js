@@ -80,12 +80,12 @@ const Header = () => {
             </ul>
           </div>
 
-        { pathname.includes('dashbord')&&( <label for="my-drawer-2" class="btn btn-square btn-ghost lg:hidden">
+        { pathname.includes('dashbord')&&( <label for="my-drawer-2" className="btn btn-square btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              class="inline-block w-5 h-5 stroke-current"
+              className="inline-block w-5 h-5 stroke-current"
               
             >
               <path

@@ -47,13 +47,13 @@ const MyOrders = () => {
              
               <tbody >
                 <tr className="border text-center border-r-4">
-                  <td className="p-3 text-sm border-r-1">1</td>
-                  <td className="p-3 text-sm border-r-1"><span><img className="h-20 w-20" src={oder.service.image} alt="" /></span></td>
-                  <td className="p-3 text-sm border-r-1"><span>{oder.address}</span></td>
-                  <td className="p-3 text-sm border-r-1"><span>{oder.oderQuantity}</span></td>
-                  <td className="pl-10 text-sm border-r-1"><span>{oder.oderQuantity}</span></td>
-                  <td className="p-3 text-sm border-r-1"><span>{oder.service.price}</span></td>
-                  <td className="pl-3 text-sm border-r-1"><span><button className="btn bg-red-700 ">Cancel</button></span></td>
+                  <td className="p-3 text-sm ">1</td>
+                  <td className="p-3 text-sm "><span><img className="h-20 w-20" src={oder.service.image} alt="" /></span></td>
+                  <td className="p-3 text-sm "><span>{oder.address}</span></td>
+                  <td className="p-3 text-sm "><span>{oder.oderQuantity}</span></td>
+                  <td className="pl-10 text-sm "><span>{oder.oderQuantity}</span></td>
+                  <td className="p-3 text-sm "><span>{oder.service.price}</span></td>
+                  <td className="pl-3 text-sm "><span><button className="btn bg-red-700 ">Cancel</button></span></td>
                 </tr>
                
               </tbody>

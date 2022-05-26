@@ -18,7 +18,6 @@ import MyOrders from './Pages/AllRoutes/DashBord/MyOrders';
 import MyProfile from './Pages/AllRoutes/DashBord/MyProfile';
 import MyReview from './Pages/AllRoutes/My Review/MyReview';
 import 'react-toastify/dist/ReactToastify.css';
-
 function App() {
   return (
     <div  className="max-w-7xl mx-auto px-12">

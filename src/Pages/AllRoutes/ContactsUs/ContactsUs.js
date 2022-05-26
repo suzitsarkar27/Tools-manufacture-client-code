@@ -3,7 +3,7 @@ import React from "react";
 const ContactsUs = () => {
   return (
     <section className=" mt-20 mb-20">
-      <div class="card w-full shadow-2xl">
+      <div className="card w-full shadow-2xl">
       <div className="text-center pt-10">
         <h4 className="text-2xl text-secondary font-normal">Contact Us</h4>
         <h4 className="text-4xl text-secondary">Stay connected with us</h4>
