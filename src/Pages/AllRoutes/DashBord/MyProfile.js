@@ -2,19 +2,23 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 const MyProfile = () => {
-
-    const {  register, formState: { errors }, handleSubmit, } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
-   console.log(data.name,data.email,data.address,data.education,data.phone)
+    console.log(
+      data.name,
+      data.email,
+      data.address,
+      data.education,
+      data.phone
+    );
   };
 
   return (
     <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content w-96 flex-col lg:flex-row-reverse">
-      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-        <form  onSubmit={handleSubmit(onSubmit)} class="card-body">
-
-          <div className="form-control w-full max-w-xs">
+      <div class="hero-content w-96 flex-col lg:flex-row-reverse">
+        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form onSubmit={handleSubmit(onSubmit)} class="card-body">
+            <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Name:</span>
               </label>
@@ -23,9 +27,10 @@ const MyProfile = () => {
                 name="name"
                 placeholder="Your Name"
                 className="input input-bordered w-full max-w-xs"
-                {...register("name")} />
-            </div>    
-          <div className="form-control w-full max-w-xs">
+                {...register("name")}
+              />
+            </div>
+            <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
@@ -34,9 +39,10 @@ const MyProfile = () => {
                 name="email"
                 placeholder="Your Email"
                 className="input input-bordered w-full max-w-xs"
-                {...register("email")} />
-            </div>    
-          <div className="form-control w-full max-w-xs">
+                {...register("email")}
+              />
+            </div>
+            <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Address</span>
               </label>
@@ -45,9 +51,10 @@ const MyProfile = () => {
                 name="address"
                 placeholder="Your Adress"
                 className="input input-bordered w-full max-w-xs"
-                {...register("address")} />
-            </div>    
-          <div className="form-control w-full max-w-xs">
+                {...register("address")}
+              />
+            </div>
+            <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Education</span>
               </label>
@@ -56,9 +63,10 @@ const MyProfile = () => {
                 name="education"
                 placeholder="Your Education"
                 className="input input-bordered w-full max-w-xs"
-                {...register("education")} />
-            </div>    
-          <div className="form-control w-full max-w-xs">
+                {...register("education")}
+              />
+            </div>
+            <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Phone</span>
               </label>
@@ -67,16 +75,17 @@ const MyProfile = () => {
                 name="number"
                 placeholder="Your Phone Number"
                 className="input input-bordered w-full max-w-xs"
-                {...register("phone")} />
-            </div>    
+                {...register("phone")}
+              />
+            </div>
 
-          <div class="form-control mt-6">
-              <input  class="btn btn-primary" type="submit" value={'Submit'} />
-          </div>
-        </form>
+            <div class="form-control mt-6">
+              <input class="btn btn-primary" type="submit" value={"Submit"} />
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

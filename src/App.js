@@ -16,8 +16,9 @@ import MyOders from './Pages/AllRoutes/MyOders/MyOders';
 import RequreAuth from './Pages/SHAREit/RequreAuth/RequreAuth';
 import MyOrders from './Pages/AllRoutes/DashBord/MyOrders';
 import MyProfile from './Pages/AllRoutes/DashBord/MyProfile';
-import MyReview from './Pages/AllRoutes/My Review/MyReview';
+import MyReview from './Pages/AllRoutes/DashBord/MyReview';
 import 'react-toastify/dist/ReactToastify.css';
+import AddItems from './Pages/AllRoutes/DashBord/AddItems';
 function App() {
   return (
     <div  className="max-w-7xl mx-auto px-12">
@@ -38,6 +39,7 @@ function App() {
                 <Route index element={<MyOrders></MyOrders>}></Route>
                 <Route path='profile' element={<MyProfile></MyProfile>}></Route>
                 <Route path='review' element={<MyReview></MyReview>}></Route>
+                <Route path='additems' element={<AddItems></AddItems>}></Route>
               </Route>
 
        <Route path='/myoders'element={

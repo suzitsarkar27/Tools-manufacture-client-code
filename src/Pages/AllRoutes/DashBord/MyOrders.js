@@ -20,19 +20,19 @@ const MyOrders = () => {
                     #
                   </th>
                 
-                  <th className="p-3 text-sm font-semibold tracking-wide ">
+                  <th className=" text-sm font-semibold tracking-wide ">
                   Imgare
                   </th>
-                  <th className="pl-14 ml-3 text-sm font-semibold tracking-wide ">
+                  <th className=" ml-3 text-sm font-semibold tracking-wide ">
                     Address
                   </th>
-                  <th className="p-3 text-sm font-semibold tracking-wide">
+                  <th className=" text-sm font-semibold tracking-wide">
                     Quantity
                   </th>
-                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  <th className=" text-sm font-semibold tracking-wide text-left">
                     Pace
                   </th>
-                  <th className="p-3 text-sm font-semibold tracking-wide text-left">
+                  <th className=" text-sm font-semibold tracking-wide text-left">
                     Price
                   </th>
                   <th className="pl-10 text-sm font-semibold tracking-wide text-left">
@@ -49,11 +49,15 @@ const MyOrders = () => {
                 <tr className="border text-center border-r-4">
                   <td className="p-3 text-sm ">1</td>
                   <td className="p-3 text-sm "><span><img className="h-20 w-20" src={oder.service.image} alt="" /></span></td>
-                  <td className="p-3 text-sm "><span>{oder.address}</span></td>
+                  
+                <div>
+                <td className="p-3 text-sm "><span>{oder.address}</span></td>
+                </div>
+
                   <td className="p-3 text-sm "><span>{oder.oderQuantity}</span></td>
-                  <td className="pl-10 text-sm "><span>{oder.oderQuantity}</span></td>
+                  <td className="p-3 text-sm "><span>{oder.oderQuantity}</span></td>
                   <td className="p-3 text-sm "><span>{oder.service.price}</span></td>
-                  <td className="pl-3 text-sm "><span><button className="btn bg-red-700 ">Cancel</button></span></td>
+                  <td className=" text-sm "><span className="grid grid-cols-1"> <button className="btn bg-yellow-600 mb-1">Playment</button> <button className="btn bg-red-700 ">Cancel</button></span></td>
                 </tr>
                
               </tbody>
