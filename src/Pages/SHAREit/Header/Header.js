@@ -29,7 +29,7 @@ const Header = () => {
            </button>
         </span>
           ):(
-          <li> <Link to={"/login"}>Login</Link> </li>
+          <li  className="font-bold text-xl"> <Link to={"/login"}>Login</Link> </li>
       )}
     </>
   );

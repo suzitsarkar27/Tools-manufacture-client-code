@@ -1,23 +1,33 @@
+import { updateProfile } from "firebase/auth";
 import React, { useRef } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import useToken from "../../SHAREit/CoustomHoosk/useToken.js";
 import auth from "../../SHAREit/Firebase/firebase.init";
 import Loading from "../../SHAREit/Loading/Loading";
 
 const SingUp = () => {
-  const emailRef = useRef("");
-  const passwordRef = useRef("");
-  const repasswordRef = useRef("");
-  const navigate = useNavigate();
-
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
 
+  const navigate = useNavigate();
+  const [token] = useToken(user || guser);
+
   let errorElement;
+
+  if (token) {
+    navigate("/dashbord");
+  }
 
   if (user || guser) {
     navigate("/home");
@@ -39,79 +49,127 @@ const SingUp = () => {
     errorElement = <p className="text-danger">Error: {error?.message}</p>;
   }
 
-  const handelSubmit = async (e) => {
-    e.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-    const repassword = repasswordRef.current.value;
-    await createUserWithEmailAndPassword(email, password, repassword);
-    navigate("/home");
-    console.log(email, password, repassword);
+  const onSubmit = async (data) => {
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+    console.log("update done");
   };
 
   return (
     <div className="flex h-screen justify-center items-center">
       <div className="hero-content flex-col  w-96">
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handelSubmit} className="card-body">
-          <h1 className="text-2xl text-center font-bold text-secondary">Reagister Now !</h1>
+          <h2 className="text-center text-2xl font-bold text-secondary">
+            Sign Up
+          </h2>
+          <form className="card-body" onSubmit={handleSubmit(onSubmit)}>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="input input-bordered"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Name is Required",
+                  },
+                })}
+              />
+
+              <label className="label">
+                {errors.name?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.name.message}
+                  </span>
+                )}
+              </label>
+            </div>
+
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
               </label>
-
               <input
                 type="email"
-                placeholder="Email"
-                ref={emailRef}
-                className="input input-bordered"
-                required
+                placeholder="Your Email"
+                className="input input-bordered "
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Email is Required",
+                  },
+                  pattern: {
+                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                    message: "Provide a valid Email",
+                  },
+                })}
               />
+              <label className="label">
+                {errors.email?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+                {errors.email?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+              </label>
             </div>
 
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-
               <input
                 type="password"
                 placeholder="Password"
-                ref={passwordRef}
-                className="input input-bordered"
-                required
+                className="input input-bordered "
+                {...register("password", {
+                  required: {
+                    value: true,
+                    message: "Password is Required",
+                  },
+                  minLength: {
+                    value: 6,
+                    message: "Must be 6 characters or longer",
+                  },
+                })}
               />
+              <label className="label">
+                {errors.password?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.password.message}
+                  </span>
+                )}
+                {errors.password?.type === "minLength" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.password.message}
+                  </span>
+                )}
+              </label>
             </div>
 
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Re-Password</span>
-              </label>
-              <input
-                type="password"
-                ref={repasswordRef}
-                placeholder="Re-Password"
-                className="input input-bordered"
-                required
-              />
-            </div>
             {errorElement}
-            <div className="form-control mt-6">
-              <input
-                type="submit"
-                value={"Login"}
-                className="btn btn-primary text-white"
-              />
-            </div>
+            <input
+              className="btn btn-primary w-full max-w-xs text-white"
+              type="submit"
+              value="Sign Up"
+            />
 
             <p>
-              {" "}
-              Allready have accound :{" "}
+              Allready have accound :
               <Link to={"/login"} className="text-secondary font-bold">
-                {" "}
                 Login Now{" "}
-              </Link>{" "}
+              </Link>
             </p>
+
+
             <div className="flex flex-col w-full border-opacity-50">
               <div className="divider">OR</div>
               <input
