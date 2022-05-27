@@ -17,7 +17,7 @@ const DashBord = () => {
           <li>  <Link to={'/dashbord'}>My Oders</Link> </li> 
           <li> <Link to={'/dashbord/profile'}>My Profile</Link></li>
           <li> <Link to={'/dashbord/review'}>My Review</Link></li>
-          <li> <Link to={'/dashbord/additems'}>My Review</Link></li>
+          <li> <Link to={'/dashbord/additems'}>AddItmes</Link></li>
         </ul>
       </div>
     </div>

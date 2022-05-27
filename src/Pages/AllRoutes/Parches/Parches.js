@@ -12,18 +12,15 @@ const Parches = () => {
   const [user, loading, error] = useAuthState(auth);
   const { quintity ,minimun} = service;
 
- 
-  const handleSubmit=(event)=>{
-    event.preventDefault();
+  const { register, reset, handleSubmit } = useForm();
+  const onSubmit = (data) => {
     const order={
-        email:user.email,
-        userName:user.displayName,
-        phone:event.target.phone.value,
-        address:event.target.address.value,
-        oderQuantity:event.target.minimumquintity.value,
+        data,
+        name:data.name,
+        price:data.price,
         service
     }
-   
+   console.log(order)
    const proceed = toast("Your Data Is Post SuccessFull");
      if(proceed){
         
@@ -37,6 +34,7 @@ const Parches = () => {
    .then(res=>res.json())
    .then(data=>{
      console.log(data)
+     reset();
      if(data.insertedId){
      <toast></toast>
      }
@@ -67,7 +65,7 @@ const Parches = () => {
          </div>
                 
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
-              <form onSubmit={handleSubmit} className="card-body ">
+              <form onSubmit={handleSubmit(onSubmit)} className="card-body ">
 
                 {/* <p>Discription :{service.discription}</p> */}
                 
@@ -79,6 +77,7 @@ const Parches = () => {
                     name='name'
                     value={user.displayName}
                     className="input input-bordered"
+                    {...register("name")}
                     required
                   />
                 </div>
@@ -87,6 +86,7 @@ const Parches = () => {
                   type='email'
                   name="email"
                   value={user.email}
+                  {...register("email")}
                   className="input input-bordered"
                   required
                   />
@@ -96,6 +96,7 @@ const Parches = () => {
                   <input
                     type='text'
                     name='address'
+                    {...register("address")}
                     placeholder="Type Your Address"
                     className="input input-bordered"
                     required
@@ -104,6 +105,7 @@ const Parches = () => {
                 <div className="form-control">
                   <input type="number"
                     name="phone"
+                    {...register("phone")}
                     placeholder="Type Your Phone Number"
                     className="input input-bordered"
                     required
@@ -116,6 +118,7 @@ const Parches = () => {
                   type='number'
                     name="minimumquintity"
                     // value={minimun}
+                    {...register("minimumquintity")}
                     placeholder="minimum Oder 3/pic"
                     className="input input-bordered"
                     required

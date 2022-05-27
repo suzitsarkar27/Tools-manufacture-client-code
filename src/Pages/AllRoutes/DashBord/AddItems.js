@@ -1,16 +1,29 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const AddItems = () => {
-    const { register, handleSubmit } = useForm();
+    const { register,reset, handleSubmit } = useForm();
     const onSubmit = (data) => {
-      console.log(
-        data.name,
-        data.email,
-        data.address,
-        data.education,
-        data.phone
-      );
+      
+    
+      const proceed = toast("Your Data Is Post SuccessFull");
+      if (proceed) {
+        const url = `http://localhost:5000/data`;
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result);
+          });
+          
+      }
+      reset();
     };
   
   return (
@@ -33,51 +46,59 @@ const AddItems = () => {
               </div>
               <div className="form-control w-full max-w-xs">
                 <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  className="input input-bordered w-full max-w-xs"
-                  {...register("email")}
-                />
-              </div>
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                  <span className="label-text">Address</span>
-                </label>
-                <input
-                  type="text"
-                  name="address"
-                  placeholder="Your Adress"
-                  className="input input-bordered w-full max-w-xs"
-                  {...register("address")}
-                />
-              </div>
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                  <span className="label-text">Education</span>
-                </label>
-                <input
-                  type="text"
-                  name="education"
-                  placeholder="Your Education"
-                  className="input input-bordered w-full max-w-xs"
-                  {...register("education")}
-                />
-              </div>
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                  <span className="label-text">Phone</span>
+                  <span className="label-text">Price</span>
                 </label>
                 <input
                   type="number"
-                  name="number"
-                  placeholder="Your Phone Number"
+                  name="price"
+                  placeholder="Type Price"
                   className="input input-bordered w-full max-w-xs"
-                  {...register("phone")}
+                  {...register("price")}
                 />
+              </div>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Quantity</span>
+                </label>
+                <input
+                  type="number"
+                  name="quintity"
+                  placeholder="Type avilable quintity"
+                  className="input input-bordered w-full max-w-xs"
+                  {...register("quintity")}
+                />
+              </div>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">minimun</span>
+                </label>
+                <input
+                  type="number"
+                  name="minimun"
+                  placeholder="Type minimun quintity"
+                  className="input input-bordered w-full max-w-xs"
+                  {...register("minimun")}
+                />
+              </div>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Photo Url</span>
+                </label>
+                <input
+                  type="text"
+                  name="image"
+                  placeholder="Type Image url"
+                  className="input input-bordered w-full max-w-xs"
+                  {...register("image")}
+                />
+              </div>
+              <div className="form-control w-full max-w-xs">
+                <label className="label">
+                  <span className="label-text">Discription</span>
+                </label>
+                  <textarea  {...register("discription")} 
+                  class="textarea textarea-primary" 
+                  placeholder="Type discription"></textarea>
               </div>
 
               <div class="form-control mt-6">
