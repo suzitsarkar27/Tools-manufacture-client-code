@@ -2,12 +2,30 @@ import React, { useEffect, useState } from "react";
 
 const MyOrders = () => {
   const [order, setOrser] = useState([]);
-  console.log(order);
+  console.log(order)
   useEffect(() => {
     fetch(`http://localhost:5000/order`)
       .then((res) => res.json())
       .then((data) => setOrser(data));
   }, []);
+
+
+  const handelDelete = (id) => {
+    const proceed = window.confirm("Are you Sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/order/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remaining = order.filter((servic) => servic._id !== id);
+          setOrser(remaining);
+        });
+    }
+  };
+
   return (
     <div >
       <h2 className="text-2xl mb-2 text-primary font-bold">Your Oders</h2>
@@ -19,7 +37,6 @@ const MyOrders = () => {
                   <th className="p-3 text-sm font-semibold tracking-wide ">
                     #
                   </th>
-                
                   <th className=" text-sm font-semibold tracking-wide ">
                   Imgare
                   </th>
@@ -42,27 +59,25 @@ const MyOrders = () => {
               </thead>
         </table>
         {order.map((oder) => (
-         <>
+         <div key={oder._id}>
           <table className="w-full  ">
-             
               <tbody >
                 <tr className="border text-center border-r-4">
                   <td className="p-3 text-sm ">1</td>
                   <td className="p-3 text-sm "><span><img className="h-20 w-20" src={oder.service.image} alt="" /></span></td>
-                  
                 <div>
                 <td className="p-3 text-sm "><span>{oder.address}</span></td>
                 </div>
-
                   <td className="p-3 text-sm "><span>{oder.oderQuantity}</span></td>
                   <td className="p-3 text-sm "><span>{oder.oderQuantity}</span></td>
                   <td className="p-3 text-sm "><span>{oder.service.price}</span></td>
-                  <td className=" text-sm "><span className="grid grid-cols-1"> <button className="btn bg-yellow-600 mb-1">Playment</button> <button className="btn bg-red-700 ">Cancel</button></span></td>
+                  <td className=" text-sm "><span className="grid grid-cols-1"> <button className="btn bg-yellow-600 mb-1">Playment</button>
+                   <button  onClick={() => handelDelete(oder._id)}  className="btn bg-red-700 ">Cancel</button></span></td>
                 </tr>
                
               </tbody>
             </table>
-         </>
+         </div>
         ))}
       </div>
     </div>

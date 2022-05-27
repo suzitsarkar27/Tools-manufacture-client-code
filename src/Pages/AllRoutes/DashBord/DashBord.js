@@ -6,6 +6,7 @@ const DashBord = () => {
     <div className="drawer drawer-mobile  shadow-xl mt-5 ">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col  ">
+        <h2 className="text-5xl text-center text-secondary font-bold">DashBoard</h2>
         {/* <!-- Page content here --> */}
         <Outlet></Outlet>
       </div>
@@ -17,7 +18,6 @@ const DashBord = () => {
           <li> <Link to={'/dashbord/profile'}>My Profile</Link></li>
           <li> <Link to={'/dashbord/review'}>My Review</Link></li>
           <li> <Link to={'/dashbord/additems'}>My Review</Link></li>
-
         </ul>
       </div>
     </div>

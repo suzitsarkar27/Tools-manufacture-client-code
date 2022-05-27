@@ -3,10 +3,11 @@ import { Link, useLocation } from "react-router-dom";
 import auth from "../Firebase/firebase.init";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
-import RequreAuth from "../RequreAuth/RequreAuth";
+
 
 const Header = () => {
   const [user] = useAuthState(auth);
+  console.log(user)
 
   const {pathname}=useLocation();
   const handelSingOut = () => {
@@ -15,38 +16,21 @@ const Header = () => {
 
   const navbar = (
     <>
-      <li>
-        {" "}
-        <Link to={"/home"}>Home</Link>{" "}
-      </li>
-      <li>
-        {" "}
-        <Link to={"/dashbord"}>Dashbord</Link>{" "}
-      </li>
-      <li>
-        {" "}
-        <Link to={"/My Odres"}>My Oders</Link>{" "}
-      </li>
-      <li>
-        {" "}
-        <Link to={"/about"}>About</Link>{" "}
-      </li>
-      <li>
-        <Link to={"/blogs"}>Blogs</Link>{" "}
-      </li>
-      {user ? (
-        <button
-          onClick={() => handelSingOut()}
-          className="btn btn-secondary text-white ml-3"
-        >
-          {" "}
-          SingOut{" "}
-        </button>
-      ) : (
-        <li>
-          {" "}
-          <Link to={"/login"}>Login</Link>{" "}
-        </li>
+      <li  className="font-bold text-xl"> <Link to={"/home"}>Home</Link> </li>
+      <li className="font-bold text-xl"> <Link to={"/dashbord"}>Dashbord</Link> </li>
+      <li className="font-bold text-xl"><Link to={"/about"}>Portfolio</Link> </li>
+      <li className="font-bold text-xl"> <Link to={"/blogs"}>Blogs</Link></li>
+     
+        {user ? (
+         <span>
+            <img className="inline h-14 rounded-full " src={user.photoURL} alt="" />
+            <button
+            onClick={() => handelSingOut()}
+            className="btn btn-secondary text-white ml-3" > SingOut
+           </button>
+        </span>
+          ):(
+          <li> <Link to={"/login"}>Login</Link> </li>
       )}
     </>
   );
