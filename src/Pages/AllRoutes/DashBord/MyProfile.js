@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import MyOders from "../Ordersm/Ordersms";
 
 const MyProfile = () => {
   const { register, handleSubmit } = useForm();
@@ -14,10 +15,11 @@ const MyProfile = () => {
   };
 
   return (
-    <div class="hero min-h-screen bg-base-200">
-      <div class="hero-content w-96 flex-col lg:flex-row-reverse">
-        <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleSubmit(onSubmit)} class="card-body">
+    <div className="hero min-h-screen bg-base-200">
+     
+      <div className="hero-content w-96 flex-col lg:flex-row-reverse">
+        <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Name:</span>
@@ -79,8 +81,8 @@ const MyProfile = () => {
               />
             </div>
 
-            <div class="form-control mt-6">
-              <input class="btn btn-primary" type="submit" value={"Submit"} />
+            <div className="form-control mt-6">
+              <input className="btn btn-primary" type="submit" value={"Submit"} />
             </div>
           </form>
         </div>

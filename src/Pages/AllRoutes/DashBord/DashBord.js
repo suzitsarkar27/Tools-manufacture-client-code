@@ -11,13 +11,13 @@ const DashBord = () => {
         <Outlet></Outlet>
       </div>
       <div className="drawer-side static top-0 z-0">
-        <label for="my-drawer-2" className="drawer-overlay "></label>
-        <ul className=" menu p-4 overflow-y-auto w-80 bg-accent font-bold text-base-content">
+        <label forhtml="my-drawer-2" className="drawer-overlay "></label>
+        <ul className=" menu p-4 overflow-y-auto  w-80 bg-accent font-bold text-base-content">
           {/* <!-- Sidebar content here --> */}
-          <li>  <Link to={'/dashbord'}>My Oders</Link> </li> 
-          <li> <Link to={'/dashbord/profile'}>My Profile</Link></li>
-          <li> <Link to={'/dashbord/review'}>My Review</Link></li>
-          <li> <Link to={'/dashbord/additems'}>AddItmes</Link></li>
+          <li> <Link  to={'/dashbord/myodres'}>MyOders</Link></li>
+          <li>  <Link to={'/dashbord/review'}>MyReview</Link></li>
+          <li> <Link to={'/dashbord/profile'}>MyProfile</Link></li>
+          <li> <Link to={'/dashbord/additems'}>AddItems</Link></li>
         </ul>
       </div>
     </div>

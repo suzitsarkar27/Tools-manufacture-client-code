@@ -5,11 +5,14 @@ import UseUpData from "../../SHAREit/CoustomHoosk/UseUpData";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from "../../SHAREit/Firebase/firebase.init";
 import { toast } from "react-toastify";
+import MyOders from "../Ordersm/Ordersms";
 
 const Parches = () => {
   const { Id } = useParams({});
   const [service, setService] = UseUpData(Id);
+  console.log(Id,service)
   const [user, loading, error] = useAuthState(auth);
+  console.log(user)
   const { quintity ,minimun} = service;
 
   const { register, reset, handleSubmit } = useForm();
@@ -21,10 +24,11 @@ const Parches = () => {
         service
     }
    console.log(order)
+
    const proceed = toast("Your Data Is Post SuccessFull");
-     if(proceed){
+    if(proceed){
         
-   fetch("http://localhost:5000/order", {
+   fetch("https://sleepy-eyrie-85757.herokuapp.com/order", {
     method: "POST",
     headers: {
       "content-type": "application/json",

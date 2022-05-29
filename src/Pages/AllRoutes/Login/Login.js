@@ -11,6 +11,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Loading from "../../SHAREit/Loading/Loading";
 import { toast } from "react-toastify";
 import { async } from "@firebase/util";
+import useToken from "../../SHAREit/CoustomHoosk/useToken";
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -18,16 +19,18 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
+    const [token] =useToken(user||gUser)
+ 
   let signInError;
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
-
+  
   useEffect(() => {
     if (user || gUser) {
       navigate(from, { replace: true });
     }
-  }, [user, gUser, from, navigate]);
+  }, [token, from, navigate]);
 
   if (loading || gLoading) {
     return <Loading></Loading>;

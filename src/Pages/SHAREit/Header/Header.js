@@ -11,6 +11,7 @@ const Header = () => {
   const {pathname}=useLocation();
   const handelSingOut = () => {
     signOut(auth);
+    localStorage.removeItem('accesssToken');
   };
 
   const navbar = (
@@ -62,7 +63,7 @@ const Header = () => {
             </ul>
           </div>
 
-        { pathname.includes('dashbord')&&( <label for="my-drawer-2" className="btn btn-square btn-ghost lg:hidden">
+        { pathname.includes('dashbord')&&( <label forhtml="my-drawer-2" className="btn btn-square btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

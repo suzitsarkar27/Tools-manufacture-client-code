@@ -9,14 +9,14 @@ const Services = () => {
     const services=service.slice(0,6);
 
 //   useEffect(()=>{
-//       fetch(`http://localhost:5000/data`)
+//       fetch(`https://sleepy-eyrie-85757.herokuapp.com/data`)
 //       .then(res=>res.json())
 //       .then(data=>setService(data))
 //   },[])
     
 
     const { isLoading, error,  refetch  } = useQuery('repoData', () =>
-    fetch(`http://localhost:5000/data`)
+    fetch(`https://sleepy-eyrie-85757.herokuapp.com/data`)
     .then(res => res.json()
     .then(data=>setService(data))
     )

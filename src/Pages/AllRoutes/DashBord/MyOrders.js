@@ -4,7 +4,7 @@ const MyOrders = () => {
   const [order, setOrser] = useState([]);
   console.log(order);
   useEffect(() => {
-    fetch(`http://localhost:5000/order`)
+    fetch(`https://sleepy-eyrie-85757.herokuapp.com/order`)
       .then((res) => res.json())
       .then((data) => setOrser(data));
   }, []);
@@ -13,7 +13,7 @@ const MyOrders = () => {
     const proceed = window.confirm("Are you Sure?");
   
     if (proceed) {
-      const url = `http://localhost:5000/order/${id}`;
+      const url = `https://sleepy-eyrie-85757.herokuapp.com/order/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -88,7 +88,7 @@ const MyOrders = () => {
                         Playment
                       </button>
                       <button
-                      for="my-modal-3"
+                      forhtml="my-modal-3"
                         onClick={() => handelDelete(oder._id)}
                         className="btn bg-red-700 "
                       >

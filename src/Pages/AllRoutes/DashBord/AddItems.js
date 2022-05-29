@@ -5,33 +5,36 @@ import { toast } from "react-toastify";
 const AddItems = () => {
     const { register,reset, handleSubmit } = useForm();
     const onSubmit = (data) => {
-      
+      console.log(data)
     
       const proceed = toast("Your Data Is Post SuccessFull");
-      if (proceed) {
-        const url = `http://localhost:5000/data`;
-        fetch(url, {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            console.log(result);
-          });
+      if(proceed){
           
-      }
-      reset();
-    };
+     fetch("https://sleepy-eyrie-85757.herokuapp.com/data", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+     .then(res=>res.json())
+     .then(data=>{
+       console.log(data)
+       reset();
+       if(data.insertedId){
+       <toast></toast>
+       }
+     })
+       }
+       reset();
+    }
   
   return (
     <div>
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content w-96 flex-col lg:flex-row-reverse">
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleSubmit(onSubmit)} class="card-body">
+      <div className="hero min-h-screen bg-base-200">
+        <div className="hero-content w-96 flex-col lg:flex-row-reverse">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+            <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control w-full max-w-xs">
                 <label className="label">
                   <span className="label-text">Name:</span>
@@ -97,12 +100,12 @@ const AddItems = () => {
                   <span className="label-text">Discription</span>
                 </label>
                   <textarea  {...register("discription")} 
-                  class="textarea textarea-primary" 
+                  className="textarea textarea-primary" 
                   placeholder="Type discription"></textarea>
               </div>
 
-              <div class="form-control mt-6">
-                <input class="btn btn-primary" type="submit" value={"Submit"} />
+              <div className="form-control mt-6">
+                <input className="btn btn-primary" type="submit" value={"Submit"} />
               </div>
             </form>
           </div>
