@@ -1,8 +1,18 @@
 
-  ১.এই ওয়েবসাইটি টুলস হার্ডওয়্যার ওয়েবসাইট ,এটির একটা হোম পেইজ ,ডেসবোড ,মাই প্রোটপ্লিও পেইজ রয়েছে ।
-  ২হোম পেইজে একটি বেনার রয়েছে ,বেনারে এমিনিশন যুক্ত রয়েছে ।
-  ৩ হোম পেইজে ৬ টি টুলস আইটেম রয়েছে ,এবং একটি কন্টাক্ট ফর্ম রয়েছে ।
-  ৪ একটি রেস্পন্সিব ফুটর রয়েছে ।
-  ৫ ডেসবোডে সকল ওডার দেখানো হয়েছে ।
-৬ সমর্পণ অয়েবসাইটি রেস্পন্সিব ।
+ * This website is a tools hardware website, it has a home page, desboard, my protoplio page. 
  
+ * There is a banner on the home page, the banner has added animation. 
+
+ * The home pages have 6 tool items, and a contact form.
+
+ * has a Responsive Footer. All descriptions are displayed on 5 desboards. 
+
+ * A non-sing upped user gets to see the basics of our site and
+  needs to log in to do more activities.
+
+ * user can buy products update his profile and monitor his
+  purchased product.
+  
+ * If you want to use the product is good or bad
+  Can comment.
+   
