@@ -10,7 +10,7 @@ const AddItems = () => {
       const proceed = toast("Your Data Is Post SuccessFull");
       if(proceed){
           
-     fetch("https://sleepy-eyrie-85757.herokuapp.com/data", {
+     fetch("https://calm-fjord-94162.herokuapp.com/data", {
       method: "POST",
       headers: {
         "content-type": "application/json",

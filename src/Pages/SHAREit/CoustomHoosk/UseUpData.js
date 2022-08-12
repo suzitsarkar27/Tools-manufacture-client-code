@@ -7,7 +7,7 @@ const UseUpData = () => {
 
     const [service, setService] = useState({});
     useEffect(() => {
-      const url = `https://sleepy-eyrie-85757.herokuapp.com/data/${Id}`;
+      const url = `https://calm-fjord-94162.herokuapp.com/data/${Id}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => setService(data));
